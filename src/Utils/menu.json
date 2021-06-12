@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Página incial",
+        "route": "/"
+    },
+    {
+        "name": "Configurações",
+        "route": "/Configs"
+    },
+    {
+        "name": "Usuários",
+        "route": "/Users"
+    }
+]
