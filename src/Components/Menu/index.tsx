@@ -3,6 +3,7 @@ import { MenuComponent, HeaderMenuComponent, Content } from './style'
 import { FaBars } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 import menu from "../../Utils/menu.json"
+
 const Menu: React.FC = () => {
     return (
         <>

@@ -1,15 +1,16 @@
 //#region
-import React, { useContext, useState, useEffect } from "react";
+import React from "react";
 //#endregion
 import { Container } from './style';
 import Menu from '../../Components/Menu'
-import { toast } from 'react-toastify';
+import Body from '../../Components/Body'
 import 'react-toastify/dist/ReactToastify.css';
-const Dashboard = () => {
+
+const Dashboard: React.FC = () => {
   return (
     <Container>
       <Menu />
-      {/* <Body /> */}
+      <Body />
     </Container>
   );
 };

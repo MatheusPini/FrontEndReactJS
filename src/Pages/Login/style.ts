@@ -5,7 +5,8 @@ interface InputValidation{
 }
 export const Container = styled.div`
   display: flex;
-  background-color: #f7f7f7;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 31px -22px black;
   width: 100%;
   margin: auto auto;
   height: 100%;
@@ -75,7 +76,7 @@ export const BoxBody = styled.div`
     transition: 0.4s;
   }
   .buttonForm:hover{
-    background-color: #f7f7f7;
-    color: #b9b9b9;
+    background-color: #efefef;
+    color: #989898;
   }
 `

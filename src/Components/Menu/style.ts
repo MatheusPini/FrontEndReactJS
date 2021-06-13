@@ -3,9 +3,12 @@ import styled from 'styled-components'
 
 export const MenuComponent = styled.nav`
     font-family: 'Roboto';
-    background-color: #f1f1f1;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 31px -22px black;
+    z-index: 1;
     height: 100%;
     width: 15rem;
+    min-width: 15rem;
     display: flex;
     flex-direction: column;
     ul{
@@ -38,7 +41,7 @@ export const MenuComponent = styled.nav`
     }
     
     ul li h3:hover{
-        background-color: white;
+        background-color: #efefef;
     }
     #buttonMenu{
         width: 100%;
