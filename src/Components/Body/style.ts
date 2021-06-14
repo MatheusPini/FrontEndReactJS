@@ -2,11 +2,10 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     width: 100%;
-    max-width: 1540px;
+    max-width: 100%;
     height: auto;
     background-color: white;
     box-shadow: 1px 1px 31px -22px black;
-    
     flex-wrap: wrap;
     display: flex;
 `

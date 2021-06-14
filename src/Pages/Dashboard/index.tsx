@@ -5,12 +5,13 @@ import { Container } from './style';
 import Menu from '../../Components/Menu'
 import Body from '../../Components/Body'
 import 'react-toastify/dist/ReactToastify.css';
+import { ValidationError } from "yup";
 
 const Dashboard: React.FC = () => {
   return (
     <Container>
       <Menu />
-      <Body />
+      <Body/>
     </Container>
   );
 };
