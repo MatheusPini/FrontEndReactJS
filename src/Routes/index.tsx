@@ -10,13 +10,14 @@ import {
 import Login from '../Pages/Login'
 import Dashboard from '../Pages/Dashboard'
 import Configs from '../Pages/Configs'
+import RoutesPrivate from '../Components/Routes/Private/Private'
 const Routes: React.FC = () => {
     return (
         <Router>
             <Switch>
-                <Route path="/login" exact component={Login}></Route>
-                <Route path="/" exact component={Dashboard}></Route>
-                <Route path="/Configs" exact component={Configs}></Route>
+                <Route path="/login" exact component={Login} />
+                <RoutesPrivate path="/" exact component={Dashboard} />
+                <RoutesPrivate path="/Configs" exact component={Configs} />
             </Switch>
         </Router>
     )

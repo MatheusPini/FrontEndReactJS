@@ -7,7 +7,7 @@ import menu from "../../Utils/menu.json"
 const Menu: React.FC = () => {
     return (
         <>
-            <MenuComponent>
+            <MenuComponent data-aos="fade-right">
                 <HeaderMenuComponent>
                     <Content>
                         <img src="https://arita.com.br/wp-content/uploads/2020/08/pessoa-expansiva-principais-caracteristicas-desta-personalidade.jpg" alt="" />

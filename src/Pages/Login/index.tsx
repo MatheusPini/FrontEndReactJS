@@ -1,21 +1,23 @@
 //#region
-import React, { useContext, useState, useEffect } from "react";
+import React, {useContext} from "react";
 //#endregion
 import { Container, ContainerLogin, BoxHeader, BoxBody } from './style';
 
-import { Formik, Form, Field, useFormik } from "formik";
+import { useFormik } from "formik";
 import * as yup from 'yup'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Axios from 'axios'
 import { useHistory } from "react-router";
+import StoreContext from '../../Components/Store/Context'
 const schema = yup.object().shape({
   user: yup.string().required("Usuário Obrigatório"),
   pass: yup.string().required("Senha obrigatória")
 })
 
-const Login = () => {
+const Login: React.FC = () => {
   // const [userList, setUserList] = useState([])
+  const {setToken} = useContext(StoreContext)
   const history = useHistory()
   const formik = useFormik({
     initialValues: {
@@ -28,15 +30,19 @@ const Login = () => {
         login: values.user, 
         senha: values.pass
       })
-      if(data.data.length >=1){  
+      if(data.data.result.length >=1){  
         toast.success("Dados enviados com sucesso")
-        history.push("/")
+        const {token} = {token: data.data.token}
+        if(token){
+          setToken(token)
+          return history.push("/")
+        }
       }else{
         toast.error("Usuário e/ou senha incorreta")
       }
     }
   });
-  const { handleChange, handleSubmit, values, errors, handleBlur, touched } = formik
+  const { handleChange, handleSubmit, errors } = formik
   // useEffect(()=>{
   //   Axios.get('http://localhost:3002/api/get').then((response) =>{
   //     setUserList(response.data)
@@ -59,10 +65,6 @@ const Login = () => {
             </form>
         </BoxBody>
       </ContainerLogin>
-      {/* {userList.map((val)=>{
-        
-        return <h1>{val['LOGIN']}</h1>
-      })} */}
     </Container>
   );
 };

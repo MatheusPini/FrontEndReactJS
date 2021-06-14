@@ -6,4 +6,6 @@ export const ContainerComponent = styled.div`
     box-shadow: 1px 1px 31px -22px black;
     display:flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
 `
