@@ -1,8 +1,5 @@
-//#region
 import React, {useContext} from "react";
-//#endregion
 import { Container, ContainerLogin, BoxHeader, BoxBody } from './style';
-
 import { useFormik } from "formik";
 import * as yup from 'yup'
 import { toast } from 'react-toastify';
@@ -26,20 +23,20 @@ const Login: React.FC = () => {
     },
     validationSchema: schema,
     onSubmit: async (values) => {
-     const data = await Axios.post('http://localhost:3002/api/auth', {
+     const data = await Axios.post('http://localhost:3002/users/login', {
         login: values.user, 
         senha: values.pass
-      })
-      if(data.data.result.length >=1){  
-        toast.success("Dados enviados com sucesso")
-        const {token} = {token: data.data.token}
-        if(token){
-          setToken(token)
-          return history.push("/")
-        }
-      }else{
-        toast.error("Usuário e/ou senha incorreta")
+    })
+    if(data.data.result.length >=1){  
+      toast.success("Dados enviados com sucesso")
+      const {token} = {token: data.data.token}
+      if(token){
+        setToken(token)
+        return history.push("/")
       }
+    }else{
+      toast.error("Usuário e/ou senha incorreta")
+    }
     }
   });
   const { handleChange, handleSubmit, errors } = formik
