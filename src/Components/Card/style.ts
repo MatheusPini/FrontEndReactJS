@@ -4,11 +4,11 @@ export const CardComponent = styled.div<CardInterface>`
     font-family: 'Roboto';
     width: 
     ${
-        ({getLargura, typeLargura}) => ((typeLargura === "%") ? getLargura+"%" || 150+"%" : getLargura+"px" || 150+"px")
+        ({getLargura, typeLargura, }) => ((typeLargura === "%") ? getLargura+"%" || 150+"%" : getLargura+"px" || 150+"px")
     };
     height: 
     ${
-        (({getAltura, typeAltura}) => (typeAltura === "%") ? getAltura+"%" || 150+"%" : getAltura+"px" || 150+"px")
+        (({getAltura, typeAltura}) => (typeAltura === "auto") ? "auto" : ((typeAltura === "%") ? getAltura+"%" || 150+"%" : getAltura+"px" || 150+"px"))
         
     };
     margin: 15px;

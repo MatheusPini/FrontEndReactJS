@@ -9,6 +9,6 @@
     },
     {
         "name": "Usuários",
-        "route": "/Users"
+        "route": "/Usuarios"
     }
 ]
