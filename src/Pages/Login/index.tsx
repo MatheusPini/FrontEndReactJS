@@ -27,7 +27,7 @@ const Login: React.FC = () => {
         login: values.user, 
         senha: values.pass
     })
-    if(data.data.result.length >=1){  
+    if(data.data.result){  
       toast.success("Dados enviados com sucesso")
       const {token} = {token: data.data.token}
       if(token){

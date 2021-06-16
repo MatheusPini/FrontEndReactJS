@@ -28,11 +28,11 @@ const Body: React.FC = () => {
     return (
         <Container>
             <Card getAltura={250} getLargura={100} typeAltura={"px"} typeLargura={"%"}>
-                <h3>Conteudo</h3>
+                <h3>Dashboard</h3>
             </Card>
             <Card getAltura={450} getLargura={800} typeAltura={"px"} typeLargura={"px"}>
                 <div id="idGrafics">
-
+                    
                 </div>
             </Card>
             <Card getAltura={400} getLargura={600} typeAltura={"px"} typeLargura={"px"}>
