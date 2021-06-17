@@ -13,7 +13,7 @@ const schema = yup.object().shape({
 })
 
 const Login: React.FC = () => {
-  // const [userList, setUserList] = useState([])
+  
   const {setToken} = useContext(StoreContext)
   const history = useHistory()
   const formik = useFormik({
@@ -40,12 +40,7 @@ const Login: React.FC = () => {
     }
   });
   const { handleChange, handleSubmit, errors } = formik
-  // useEffect(()=>{
-  //   Axios.get('http://localhost:3002/api/get').then((response) =>{
-  //     setUserList(response.data)
-  //     // console.log(userList)
-  //   })
-  // }, [userList])
+
   
   return (
     <Container>

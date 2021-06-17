@@ -1,8 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {Route, Redirect} from 'react-router-dom'
 import StoreContext from '../../Store/Context'
+import Axios from 'axios'
 const RoutesPrivate = ({component: Component, ...rest}) => {
     const {token} = useContext(StoreContext)
+    
     return (
         <Route
             {...rest}
