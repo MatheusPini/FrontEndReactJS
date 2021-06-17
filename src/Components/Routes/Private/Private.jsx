@@ -9,7 +9,7 @@ const RoutesPrivate = ({component: Component, ...rest}) => {
         <Route
             {...rest}
             render={
-                ()=>token?(
+                ()=>(token && token != "")?(
                     <Component {...rest} />
                 )
                 :

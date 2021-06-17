@@ -1,17 +1,30 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import { Container } from './style';
 import Menu from '../../Components/Menu'
 import Body from "../../Components/Body"
 import Card from "../../Components/Card"
-// import Axios from 'axios'
-const Configs: React.FC = () => {
-  // const [userList, setUserList] = useState([])
+import StoreContext from '../../Components/Store/Context'
+import Axios from 'axios'
 
-  // useEffect(() => {
-  //   Axios.get('http://localhost:3002/api/get').then((response) => {
-  //     setUserList(response.data)
-  //   })
-  // }, [userList])
+const Configs: React.FC = () => {
+  const { token, setToken } = useContext(StoreContext)
+  // const [userList, setUserList] = useState([])
+  const requisit = async () => {
+    try {
+      const auth = await Axios.post('http://localhost:3002/configs', {
+        token: token
+      })
+      
+      console.log(auth)
+    }catch (error) {
+       console.log(error)
+        setToken("")
+      }
+    }
+  
+  useEffect(() => {
+    requisit()
+  }, [])
   return (
     <Container>
       <Menu />
