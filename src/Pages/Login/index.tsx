@@ -46,7 +46,7 @@ const Login: React.FC = () => {
     <Container>
       <ContainerLogin>
         <BoxHeader>
-          <h2 className="titleHeader">SYSchool</h2>
+          <h2 className="titleHeader">LOGIN PADRÃO</h2>
         </BoxHeader> 
         <BoxBody>
             <form onSubmit={handleSubmit}>
